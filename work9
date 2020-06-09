@@ -1,0 +1,86 @@
+import java.security.spec.RSAOtherPrimeInfo;
+import java.util.ArrayList;
+import java.util.Scanner;
+import  java.util.ArrayList;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter Max Heat for WrapperEngine");
+
+        int HeatManagerWrapper = scan.nextInt();
+        System.out.println("Enter Max Heat for HeatEngine");
+        int HeatManagerHeat = scan.nextInt();
+
+        ArrayList <Machine> machines = new ArrayList<Machine>(10);
+        WrapperEngine wrapperEngine = new WrapperEngine();
+        HeatEngine heatEngine = new HeatEngine();
+
+        for (int i = 0; i < 10; i++) {
+          if(i %2 == 0){
+              machines.add(wrapperEngine);
+              System.out.println(" This WrapperEngine Maximum Heat is "+HeatManagerWrapper);
+          }
+          else if(i %2 == 1){
+              machines.add(heatEngine);
+              System.out.println(" This HeatEngine Maximum Heat is "+HeatManagerHeat);
+          }
+        }
+
+
+    }
+}
+
+public class Engine {
+
+         private int power;
+        public int getPower(){
+            return power;
+
+        }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+}
+
+public class Person {
+
+
+        String name;
+
+    public String getName() {
+        return name;
+
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class Machine extends Engine {
+
+        int height;
+        String color;
+
+
+
+    }
+
+
+public class WrapperEngine extends Machine {
+
+
+    }
+
+public class HeatEngine extends Machine {
+
+
+
+    }
+    public class ProductionEngine extends Engine {
+
+
+
+    }
